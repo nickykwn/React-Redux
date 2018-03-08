@@ -32,10 +32,7 @@ ReactDOM.render(
             <Switch>
                 
                 
-                <App>
-                    
-                
-                </App>
+            <App />
             </Switch>
         </Router>
     </Provider>,
