@@ -11,9 +11,9 @@ app.use(bodyparser.urlencoded({
 app.use(bodyparser.json());
 
 app.use(express.static(path.join(__dirname, '/../client/')));
-app.use(express.static(path.join(__dirname, '/../node_modules')));
+    app.use(express.static(path.join(__dirname, '/../node_modules')));
 
-app.use("/api", require('./routes'));
+// app.use("/api", require('./routes'));
 
 app.listen(port, (err) => {
     if (err) {
@@ -21,3 +21,18 @@ app.listen(port, (err) => {
     }
     console.log('Server is listening to port : ', port);
 });
+
+
+// app.get('*', function (request, response) {
+//   response.sendFile(path.join(__dirname, '/../client', 'index.html'))
+// })
+
+//     const port = process.env.PORT || 9999;
+
+  
+//     app.listen(port, (err) => {
+//       if (err) {
+//         console.log('Error occurred : ', err);
+//       }
+//       console.log('Server is listening to port : ', port);
+//     });

@@ -3,12 +3,14 @@
   //Declariations and libraries
 //----------------------------------------------------------------------------------------------------------
 import React                                            from 'react';
+import ReactDOM                                         from 'react-dom';
 import { BrowserRouter as Router, Switch, Route }       from 'react-router-dom';
 import { Provider }                                     from 'react-redux';
 import { createStore, applyMiddleware }                 from 'redux';
 import promise                                          from 'redux-promise';
 import createMemoryHistory                              from 'history/createMemoryHistory';
 import App                                              from './container/app.jsx';
+// import Login from './'
 //----------------------------------------------------------------------------------------------------------
   //Parent Components
 //----------------------------------------------------------------------------------------------------------
@@ -32,7 +34,6 @@ ReactDOM.render(
                 
                 <App>
                     
-                    
                 
                 </App>
             </Switch>
@@ -40,13 +41,4 @@ ReactDOM.render(
     </Provider>,
   document.getElementById('app') || document.createElement('div')
 );
-
-
-Add CommentCollapse 
-Message Input
-
-Message #transactaction
-
-*bold* _italics_ ~strike~ `code` ```preformatted``` >quote
-Thread
 
