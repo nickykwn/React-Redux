@@ -16,71 +16,37 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules\/(?!react-voice-components)/,
+        exclude: /node_modules/,
         use: [
-          'babel-loader',
+            'babel-loader',
         ],
       },
-      {
+        {
         test: [/\.wexbim$/, /\.docx$/, /\.csv$/, /\.mp4$/, /\.xlsx$/, /\.doc$/, /\.avi$/, /\.webm$/, /\.mov$/, /\.mp3$/, /\.pdf$/],
         use: [
-          'file-loader',
+            'file-loader',
         ],
-      },
-      {
+        },
+        {
         test: /\.(png|jpg)$/,
         use: [
-          'url-loader?limit=200000',
+            'url-loader?limit=200000',
         ],
-      },
-      {
-        test: /\.(gif)$/,
-        use: [
-          // {
-          //   loader: 'url-loader',
-          //   options: {
-          //     limit: 2500000
-          //   }
-          // },
-          {
-            loader: 'file-loader',
-            options: {
-              query: {
-                name: 'assets/[name].[ext]',
-              },
-            },
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              query: {
-                mozjpeg: {
-                  progressive: true,
-                },
-                gifsicle: {
-                  interlaced: true,
-                },
-                optipng: {
-                  optimizationLevel: 7,
-                },
-              },
-            },
-          },
-        ],
-      },
-      {
+        },
+    
+        {
         test: /\.jsx\.html$/,
         exclude: /node_modules/,
         use: [
-          'babel!react-pure-html-component',
+            'babel!react-pure-html-component',
         ],
-      },
-      {
+        },
+        {
         test: /\.css$/,
         use: [
-          'style-loader', 'css-loader',
+            'css-loader',
         ],
-      },
+        },
     ],
   },
   resolve: {

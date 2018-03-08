@@ -21,18 +21,3 @@ app.listen(port, (err) => {
     }
     console.log('Server is listening to port : ', port);
 });
-
-
-// app.get('*', function (request, response) {
-//   response.sendFile(path.join(__dirname, '/../client', 'index.html'))
-// })
-
-//     const port = process.env.PORT || 9999;
-
-  
-//     app.listen(port, (err) => {
-//       if (err) {
-//         console.log('Error occurred : ', err);
-//       }
-//       console.log('Server is listening to port : ', port);
-//     });
