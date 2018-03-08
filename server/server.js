@@ -11,9 +11,13 @@ app.use(bodyparser.urlencoded({
 app.use(bodyparser.json());
 
 app.use(express.static(path.join(__dirname, '/../client/')));
-    app.use(express.static(path.join(__dirname, '/../node_modules')));
+app.use(express.static(path.join(__dirname, '/../node_modules')));
 
 // app.use("/api", require('./routes'));
+
+app.get('*', function (request, response){
+  response.sendFile(path.join(__dirname, '/../client', 'index.html'))
+})
 
 app.listen(port, (err) => {
     if (err) {
