@@ -26,7 +26,7 @@ class SignUpPage extends Component {
 
 	handleChange(e) {
 		this.setState({
-			[e.target.name]: 					= e.target.value
+			[e.target.name]: 					e.target.value
 		})
 	}
 
@@ -47,6 +47,19 @@ class SignUpPage extends Component {
 				<h2>SignUp</h2>
 				<form onSubmit={this.submit} className="auth-form">
 					<Row>
+						<Col xs={ 6 }>
+							<FormGroup controlId="horizontalPassword">
+							<ControlLabel className="auth-labels">Email</ControlLabel>
+							<input
+								className="form-control"
+								type="email"
+								placeholder="email"
+								name="email"
+								value={this.state.email}
+								onChange={this.handleChange}
+							/>
+							</FormGroup>
+						</Col>
 						<Col xs={ 6 }>
 							<FormGroup controlId="formHorizontalPassword">
 								<ControlLabel className="enterprise-labels">Password</ControlLabel>
@@ -78,4 +91,4 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators({signUp}, dispatch);
 }
 
-export default connect(mapDispatchToProps, mapDispatchToProps, SignUpPage);
+export default connect(mapDispatchToProps, mapDispatchToProps)(SignUpPage);

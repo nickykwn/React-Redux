@@ -1,9 +1,10 @@
-import React, { Component, PropTypes },	 from 'react';
+import React, { Component, PropTypes }	 from 'react';
 import { connect } 						 from 'react-redux';
 import { bindActionCreators }			 from 'redux';
 import { Redirect }						 from 'react-router';
 import { Button, 
-		 Form, 
+		 Form,
+		 Col, 
 		 Column, 
 		 Row,
 		 FormGroup,
@@ -13,7 +14,7 @@ import { logIn }						 from '../../actions/authenticationActions.js';
 
 class LogInPage extends Component{
 	
-	construction(prop) {
+	constructor(props) {
 		super(props);
 
 		this.state = {
@@ -21,8 +22,8 @@ class LogInPage extends Component{
 			email: 	  			"",
 		}
 
-		this.handleChange 						this.handleChange.bind(this);
-		this.submit 							this.submit.bind(this);
+		this.handleChange 						= this.handleChange.bind(this);
+		this.submit 							= this.submit.bind(this);
 	}
 
 	handleChange(e) {
@@ -51,6 +52,19 @@ class LogInPage extends Component{
 					<Row>
 						<Col xs={ 6 }>
 							<FormGroup controlId="horizontalPassword">
+							<ControlLabel className="auth-labels">Email</ControlLabel>
+							<input
+								className="form-control"
+								type="email"
+								placeholder="email"
+								name="email"
+								value={this.state.email}
+								onChange={this.handleChange}
+							/>
+							</FormGroup>
+						</Col>
+						<Col xs={ 6 }>
+							<FormGroup controlId="horizontalPassword">
 							<ControlLabel className="auth-labels">Password</ControlLabel>
 							<input
 								className="form-control"
@@ -71,13 +85,13 @@ class LogInPage extends Component{
 }
 
 function mapStateToProps(state) {
-	return {
-		authentication: state.authentication
-	}
+    return {
+        authentication: state.authentication
+    }
 }
 
-function mapDispatchToProps(state) {
-	return bindActionCreators({ logIn}, dispatch);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ logIn }, dispatch);
 }
 
-export default connect(mapDispatchToProps, mapStateToProps, LogInPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LogInPage);

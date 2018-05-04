@@ -4,22 +4,22 @@ import SignUp 						  	from '../microcomponents/authentication/signup.jsx';
 
 class Authentication extends Component {
 	
-	construction(props){
-		super(props)
+	constructor(props){
+		super(props) 
 		
-		this.login 				this.login.bind(this);
-		this.signup 			this.signup.bind(this);
+		this.login 				= this.login.bind(this);
+		this.signup 			= this.signup.bind(this);
 	}
 
 	signup() {
 		return (
-			<Signup />
+			<SignUp />
 		)
 	}
 
 	login() {
 		return (
-			<Login />
+			<LogIn />
 		)
 	}
 
@@ -39,7 +39,7 @@ class Authentication extends Component {
 	render () {
 		return(
 			<div>
-				{ this.authenticationRender(); }
+				{ this.authenticationRender() }
 			</div>
 		)
 	}
