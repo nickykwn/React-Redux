@@ -2,9 +2,6 @@ var DEFAULT_STATE = {
 	login: 			{},
 	signup: 		"",
 	logout: 		"",
-	user: 			{},
-	email: 			"",
-	password: 		"",
 }
 
 const login 	= ( state, action ) => {
@@ -34,33 +31,6 @@ const logout 	= ( state, action ) => {
 	return newState;
 }
 
-const user		= ( state, action ) => {
-
-	let newState		= {};
-	let user			= action.payload;
-
-	Object.assign(newState, state, {user});
-	return newState;
-}
-
-const email		= ( state, action ) => {
-
-	let newState		= {};
-	let email			= action.payload;
-
-	Object.assign(newState, state, {email});
-	return newState;
-}
-
-const password  = ( state, action ) => {
-
-	let newState		= {};
-	let password 		= action.payload;
-
-	Object.assign(newState, state, {password});
-	return newState;
-}
-
 
 export default function(state = [], action) {
 	switch(action.type) {
@@ -70,12 +40,6 @@ export default function(state = [], action) {
 			return login(state, action);
 		case 'LOG_OUT':
 			return logout(state, action);
-		case 'USER_INFO':
-			return user(state, action);
-		case 'CHANGE_EMAIL':
-			return email(state, action);
-		case 'CHANGE_PASSWORD':
-			return password(state, action);
 		default:
 			return state;
 	}

@@ -42,6 +42,32 @@ class LogInPage extends Component{
 
 		logIn(data)
 	}
+
+	render () {
+		return (
+			<div className = "content" >
+				<h2>LogIn</h2>
+				<Form onsubmit={this.submit} className="auth-form"> 
+					<Row>
+						<Col xs={ 6 }>
+							<FormGroup controlId="horizontalPassword">
+							<ControlLabel className="auth-labels">Password</ControlLabel>
+							<input
+								className="form-control"
+								type="password"
+								placeholder="password"
+								name="password"
+								value={this.state.password}
+								onChange={this.handleChange}
+							/>
+							</FormGroup>
+						</Col>
+						<Button type="submit" bsStyle ="success">Login</Button>
+					</Row>
+				</Form>
+			</div>	
+		)
+	}
 }
 
 function mapStateToProps(state) {

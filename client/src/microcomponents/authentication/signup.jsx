@@ -40,6 +40,32 @@ class SignUpPage extends Component {
 		const { signUp }						= this.props;
 		signUp(data)
 	}
+
+	render () {
+		return (
+			<div className="content">
+				<h2>SignUp</h2>
+				<form onSubmit={this.submit} className="auth-form">
+					<Row>
+						<Col xs={ 6 }>
+							<FormGroup controlId="formHorizontalPassword">
+								<ControlLabel className="enterprise-labels">Password</ControlLabel>
+								<input
+									className="form-control"
+									type="password"
+									placeholder="password"
+									name="password"
+									value={this.state.password}
+									onChange={this.handleChange}
+								/>
+							</FormGroup>
+						</Col>
+					</Row>
+					<Button type="submit" bsStyle="success">Signup</Button> 
+				</form>
+			</div>
+		)
+	}
 }
 
 function mapStateToProps(state) {
