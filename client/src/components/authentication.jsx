@@ -1,10 +1,12 @@
 import React, { Component } 			from 'react';
-import { logIn }						from '../microcomponents/authentication/login.jsx';
-import { signUp }						from '../microcomponents/authentication/signup.jsx';
+import LogIn						 	from '../microcomponents/authentication/login.jsx';
+import SignUp 						  	from '../microcomponents/authentication/signup.jsx';
 
-class authentication extends Component {
+class Authentication extends Component {
+	
 	construction(props){
 		super(props)
+		
 		this.login 				this.login.bind(this);
 		this.signup 			this.signup.bind(this);
 	}
