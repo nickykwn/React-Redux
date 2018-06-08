@@ -14,6 +14,9 @@ import App                                              from './container/app.js
 //----------------------------------------------------------------------------------------------------------
   //Parent Components
 //----------------------------------------------------------------------------------------------------------
+
+import Authentication                                   from './components/authentication.jsx';
+
 //----------------------------------------------------------------------------------------------------------
   //Reducer
 //----------------------------------------------------------------------------------------------------------
@@ -30,9 +33,9 @@ ReactDOM.render(
     <Provider store={createStoreWithMiddleware(store, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
         <Router basename="/" history={ history } >
             <Switch>
-                
-                
-            <App />
+                <Route exact path="/login"              component={Authentication} />
+                <Route exact path="/signup"             component={Authentication} />
+                <App />
             </Switch>
         </Router>
     </Provider>,
