@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CRANEAI/Project-Transactional-Message-UI.git"
+    "url": ""
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CRANEAI/Project-Transactional-Message-UI/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/CRANEAI/Project-Transactional-Message-UI#readme",
+  "homepage": "",
   "dependencies": {
     "axios": "^0.18.0",
     "babel-core": "^6.26.0",
