@@ -35,8 +35,7 @@ class LogInPage extends Component{
 
 	submit(e) {
 		e.preventDefault();
-		const { logIn } = this.props;
-
+		let { logIn } = this.props;
 		const data 		=  {};
 		data.email 		= this.state.email;
 		data.password	= this.state.password;
@@ -47,8 +46,8 @@ class LogInPage extends Component{
 	render () {
 		return (
 			<div className = "content" >
-				<h2>LogIn</h2>
-				<Form onsubmit={this.submit} className="auth-form"> 
+				<h2>Log In</h2>
+				<Form onSubmit={this.submit} className="auth-form"> 
 					<Row>
 						<Col xs={ 6 }>
 							<FormGroup controlId="horizontalPassword">

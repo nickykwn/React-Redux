@@ -44,7 +44,7 @@ class SignUpPage extends Component {
 	render () {
 		return (
 			<div className="content">
-				<h2>SignUp</h2>
+				<h2>Sign Up</h2>
 				<form onSubmit={this.submit} className="auth-form">
 					<Row>
 						<Col xs={ 6 }>

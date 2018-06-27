@@ -22,14 +22,13 @@ export function signUp(data) {
 }
 
 export function logIn(data) {
-
 	const resObj = {
 		email: 			data.email,
 		password: 		data.password
 	};
-
 	return axios.post(url + '', resObj)
 	.then ( res => {
+
 		localStorage.setItem('id', res.data.id);
 		localStorage.setItem('token', res.data.token);
 
@@ -37,7 +36,7 @@ export function logIn(data) {
 		return {
 
 			type: 		LOG_IN,
-			payload: 	res
+			payload: 	res.data
 		}
 	})
 }

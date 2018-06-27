@@ -1,5 +1,6 @@
 import React, { Component }                 from 'react';
-
+import Auth                                 from '../utils/authenticator.js';
+import { Redirect }                         from 'react-router';
 
 class App extends Component {
 
@@ -10,15 +11,19 @@ class App extends Component {
     }
 
     render() {
-
-        return(
-
-                <div>
-                    <h2>Hello World!!!!!!!</h2>
-                </div>
-
+        if(Auth.loggedIn === false ){
+            return(
+                <Redirect to= {{
+                    pathname: '/login',
+                    state: { from: this.props.location }
+                }} />
             )
-        
+        }
+        return(
+                <div>
+                    <h2>Fo get About it!!!</h2>
+                </div>
+        )
     }
 }
 
