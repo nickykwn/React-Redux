@@ -8,7 +8,7 @@ module.exports = {
 		timeout: 5000,
   	}),
   	cdnUrl: '',
-  	url: '',
+  	url: 'http://localhost:8888',
   	setToken: () => {
 		  axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token') || null}`;
   	},
