@@ -22,6 +22,7 @@ class App extends Component {
         return(
                 <div>
                     <h2>Fo get About it!!!</h2>
+                    <img src="../img/owen-wow.jpeg" alt="owen-wow"/>
                 </div>
         )
     }
